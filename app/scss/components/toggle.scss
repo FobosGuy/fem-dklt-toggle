@@ -1,0 +1,86 @@
+@use '../util' as *;
+
+.toggle {
+  display: grid;
+  grid-template-columns: 1fr rem(60) 1fr; 
+  grid-template-rows: repeat(2, 1fr);
+  gap: rem(4.8) rem(8);
+  border: none;
+
+  label {
+    font-size: rem(14);
+    
+    &[for="dark"] {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      justify-self: end;
+      align-self: center;
+    }
+    &[for="system"] {
+      grid-column: 1 / 4;
+      grid-row: 2 / 3;
+      justify-self: center;
+      align-self: start;
+    }
+    &[for="light"] {
+      grid-column: 3 / 4;
+      grid-row: 1 / 2;
+      align-self: center;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    height: rem(24);
+  }
+
+  input[type="radio"] {
+    opacity: 0;
+    margin: 0 rem(-2);
+    width: rem(20);
+    height: rem(24);
+
+    &:focus ~ .toggle__button {
+      border: rem(2) solid white;
+    }
+  }
+
+  &__background {
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: rem(12);
+    overflow: hidden;
+    background: linear-gradient(
+      225deg, 
+      var(--toggle-bg-end) 0%,
+      var(--toggle-bg-start) 98.02%
+    );
+  }
+
+  &__button {
+    position: absolute;
+    left: rem(3);
+    top: rem(3);
+    right: 100%;
+    width: rem(18);
+    height: rem(18);
+    border-radius: 50%;
+    background-color: var(--dark-bg);
+    transition: all 300ms ease;
+    #light:checked ~ & {
+      right: 3px;
+      left: auto;
+    } 
+    #system:checked ~ & {
+      left: 50%;
+      right: auto;
+      transform: translate(-50%);
+    } 
+  }
+}

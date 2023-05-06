@@ -1,0 +1,26 @@
+@use "../util" as *;
+
+.header {
+  display: flex;
+  margin-top: rem(36);
+  flex-wrap: wrap;
+  @include breakpoint-up(medium) {
+    justify-content: space-between;
+  }
+
+  &__title {
+    width: 100%;
+
+    @include breakpoint-up(medium) {
+      width: auto;
+    }
+
+  }
+
+  &__subtitle {
+    font-size: rem(14);
+    font-weight: 400;
+    color: var(--dark-text1)
+  }
+
+}

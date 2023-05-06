@@ -1,0 +1,97 @@
+@use '../util' as *;
+
+.card {
+  border-radius: rem(5);
+  padding: rem(25);
+  text-align: center;
+  background-color: var(--dark-card);
+  color: var(--dark-text1);
+  
+  &s {
+    display: grid;
+    gap: rem(30);
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+      
+    }
+    @include breakpoint-up(large) {
+      grid-template-columns: repeat(4, 1fr);
+      
+    }
+  }
+
+  &--facebook {
+    border-top: rem(5) solid var(--facebook);
+  }
+  &--twitter {
+    border-top: rem(5) solid var(--twitter);
+    
+  }
+  &--instagram {
+    
+    
+  }
+  &--youtube {
+    border-top: rem(5) solid var(--youtube);
+    
+  }
+  
+  &__platform {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    column-gap: rem(8);
+    margin-bottom: rem(28) 
+  }
+  
+  &__icon {
+
+  }
+  &__username {
+    font-size: rem(12);
+    font-weight: 700;
+  }
+
+  &__folowers {
+    margin-bottom: rem(25);
+  }
+  
+  &__count {
+    margin-bottom: rem(5);
+    font-weight: 700;
+    letter-spacing: rem(-2);
+    line-height: 1;
+    color: var(--light-bg);
+
+    &--big {
+      font-size: rem(56);
+    }
+    &--small {
+
+    }
+  }
+
+  &__label {
+    font-size: rem(12);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: rem(5);
+    color: var(--dark-text1);
+  }
+
+  &__change {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: rem(4);
+    font-size: rem(12);
+    font-weight: 700;
+    &--up {
+      color: var(--limegreen);
+    }
+
+    &--down {
+      color: var(--brightred);
+    }
+  }
+}
