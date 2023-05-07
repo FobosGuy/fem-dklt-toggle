@@ -1,0 +1,53 @@
+@forward "./card";
+@use "../util" as *;
+
+.bottom-cards {
+  display: grid;
+  gap: rem(30);
+  @include breakpoint-up(medium) {
+    grid-template-columns: 1fr;
+  }
+  @include breakpoint-up(large) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.subbottom-cards {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: rem(30);
+  @include breakpoint-up(medium) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+  }
+  @include breakpoint-up(large) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+.card-small {
+  @extend .card;
+  padding: rem(30);
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+
+  &__upper,
+  &__lower {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__lower {
+    align-items: end;
+  }
+  &__label {
+    @extend .card__username;
+  }
+  &__icon {
+  }
+  &__count {
+    @extend .card__count--small;
+  }
+}
