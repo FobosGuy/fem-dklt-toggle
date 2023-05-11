@@ -14,13 +14,11 @@
     @include breakpoint-up(medium) {
       width: auto;
     }
-
   }
 
   &__subtitle {
     font-size: rem(14);
     font-weight: 400;
-    color: var(--text1)
+    color: var(--text1);
   }
-
 }

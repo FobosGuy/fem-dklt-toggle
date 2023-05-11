@@ -1,11 +1,10 @@
-@use '../util' as *;
+@use "../util" as *;
 
 .cards {
   display: grid;
   gap: rem(30);
   @include breakpoint-up(medium) {
     grid-template-columns: repeat(2, 1fr);
-    
   }
   @include breakpoint-up(large) {
     grid-template-columns: repeat(4, 1fr);
@@ -38,7 +37,7 @@
     padding-top: rem(30);
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       width: 100%;
       height: rem(5);
@@ -49,23 +48,19 @@
         var(--instagram-start) 0%,
         var(--instagram-middle) 50.91%,
         var(--instagram-end) 100%
-      )
+      );
     }
   }
   &--youtube {
     border-top: rem(5) solid var(--youtube);
   }
-  
+
   &__platform {
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     column-gap: rem(8);
-    margin-bottom: rem(28); 
-  }
-  
-  &__icon {
-
+    margin-bottom: rem(28);
   }
 
   &__username {
@@ -76,7 +71,7 @@
   &__folowers {
     margin-bottom: rem(25);
   }
-  
+
   &__count {
     margin-bottom: rem(5);
     font-weight: 700;

@@ -7,7 +7,7 @@
   --text1: var(--dark-text1);
   --text2: var(--dark-text2);
   --toggle: linear-gradient(
-    225deg, 
+    225deg,
     var(--toggle-bg-end) 0%,
     var(--toggle-bg-start) 98.02%
   );
@@ -22,7 +22,6 @@
   --text1: var(--light-text1);
   --text2: var(--light-text2);
   --toggle: var(--toggle-light);
-
 }
 
 :root {
