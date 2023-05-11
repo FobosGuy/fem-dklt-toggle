@@ -23,7 +23,7 @@
     />
 
     <link rel="stylesheet" href="/dist/style.css" />
-    <script src="/dist/script.js"></script>
+    <!-- <script src="/dist/script.js"></script> -->
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
@@ -43,20 +43,18 @@
       </div>
 
       <fieldset
-        class="hedaer__toggle toggle"
+        class="header__toggle toggle"
         aria-label="theme toggle"
         role="radiogroup"
       >
-      <div class="toggle__wrapper">
-        <input type="radio" name="theme" id="dark" />
-        <input type="radio" name="theme" id="system" checked />
-        <input type="radio" name="theme" id="light" />
-        <span aria-hidden="true" class="toggle__background"></span>
-        <span aria-hidden="true" class="toggle__button"></span>
-      </div>
-      <label for="dark">Dark</label>
-      <label for="system">System</label>
-      <label for="light">Light</label>
+        <div class="toggle__grid-wrapper">
+          <legend>Dark Mode</legend>
+          <div class="toggle__wrapper">
+            <input type="checkbox" name="theme" id="dark">
+            <span aria-hidden="true" class="toggle__background"></span>
+            <span aria-hidden="true" class="toggle__button"></span>
+          </div>
+        </div>
       </fieldset>
     </header>
     <main>
@@ -303,5 +301,7 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">MidnightBoyi</a>.
     </div>
+
+    <script src="/dist/script.js"></script>
   </body>
 </html>

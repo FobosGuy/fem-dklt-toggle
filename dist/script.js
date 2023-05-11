@@ -1,2 +1,2 @@
-"use strict";console.log("Hello!");
+"use strict";console.log("Hello!");var elBody=document.querySelector("body"),toggle=document.querySelector("#dark");console.log(elBody),(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches||"dark"==localStorage.getItem("theme"))&&(elBody.classList.add("dark"),toggle.checked=!0),toggle.addEventListener("pointerdown",(function(e){toggle.checked?(elBody.classList.remove("dark"),localStorage.setItem("theme","light")):(elBody.classList.add("dark"),console.log("toggled"),localStorage.setItem("theme","dark"))}));
 //# sourceMappingURL=script.js.map

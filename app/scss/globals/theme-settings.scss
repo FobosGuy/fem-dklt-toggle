@@ -1,0 +1,38 @@
+@mixin prefdark() {
+  --background: var(--dark-bg);
+  --alt-bg: var(--light-bg);
+  --top-bg: var(--dark-top-bg);
+  --card: var(--dark-card);
+  --card-hover: var(--dark-card-hover);
+  --text1: var(--dark-text1);
+  --text2: var(--dark-text2);
+  --toggle: linear-gradient(
+    225deg, 
+    var(--toggle-bg-end) 0%,
+    var(--toggle-bg-start) 98.02%
+  );
+}
+
+@mixin preflight() {
+  --background: var(--light-bg);
+  --alt-bg: var(--dark-bg);
+  --top-bg: var(--light-top-bg);
+  --card: var(--light-card);
+  --card-hover: var(--light-card-hover);
+  --text1: var(--light-text1);
+  --text2: var(--light-text2);
+  --toggle: var(--toggle-light);
+
+}
+
+:root {
+  @include prefdark();
+
+  @media (prefers-color-scheme: light) {
+    @include preflight();
+  }
+
+  body.dark {
+    @include prefdark();
+  }
+}
